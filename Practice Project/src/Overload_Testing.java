@@ -17,5 +17,13 @@ public class Overload_Testing {
 	static void call(Number x) {
 		System.out.println("String");
 	}
+	
+	String test(String name) {
+		return "shubham";
+	}
+	
+	void test(int name) {
+		
+	}
 
 }
