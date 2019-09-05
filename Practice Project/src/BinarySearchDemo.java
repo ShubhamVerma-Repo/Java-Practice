@@ -36,7 +36,7 @@ public class BinarySearchDemo {
 	
 	public static int binarySearch(int value,int Arr[])
 	{		
-		int start = 0, end = Arr[Arr.length - 1], mid;
+		int start = 0, end = Arr.length - 1, mid;
 
 		while (start <= end) {
 			mid = (start + end) / 2;

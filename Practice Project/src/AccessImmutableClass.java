@@ -5,6 +5,5 @@ public class AccessImmutableClass {
 		
 		ImmutableClass immuteObj=new ImmutableClass("Shubham", 23);
 		System.out.println(immuteObj);
-		
 	}
 }
