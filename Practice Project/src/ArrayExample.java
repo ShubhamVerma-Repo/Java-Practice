@@ -56,6 +56,22 @@ public class ArrayExample {
 		System.out.println("-----------------------------------------------------------------------");
 		
 		//-----------------------------------------------------------------------
+		
+		int[] unsortedArray= {1,3,2,4,5};
+		System.out.println("Moves to sort the below array : ");
+//		Arrays.stream(findMovesToSortArray(unsortedArray)).forEach(x->System.out.print(" "+x));
+		System.out.println();
+		System.out.println("-----------------------------------------------------------------------");
+		
+		//-----------------------------------------------------------------------
+		
+		int[] shiftArrayElement= {1,3,2,4,5};
+		System.out.println("Shift the elements of an array : ");
+		Arrays.stream(shiftArrayElementFromRightToLeft(shiftArrayElement)).forEach(x->System.out.print(" "+x));
+		System.out.println();
+		System.out.println("-----------------------------------------------------------------------");
+		
+		//-----------------------------------------------------------------------
 	}
 	
 	static int maxElement(int[] arr) {
@@ -157,5 +173,43 @@ public class ArrayExample {
 				missingNumArray[counter-1]=counter;
 		}
 		return missingNumArray;
+	}
+	
+	//-----------------------------------------------------------------------
+	
+	static int[] findMovesToSortArray(int[] array) {
+		int arrLength=array.length;
+		int[] tempArray=new int[arrLength];
+		boolean flag=false;
+		for(int j=0;j<arrLength;j++) {
+			for(int i=0;i<arrLength;i++) {
+				if(array[i]>array[i+1]) {
+					if(tempArray[arrLength-1] == 0) {
+						tempArray[arrLength-1]=array[i];
+					}else {
+						
+					}
+					flag=true;
+				}else {
+					tempArray[i]=array[i];
+				}
+			}
+			if(flag==true)
+				break;
+		}
+		return tempArray;
+	}
+	
+	//-----------------------------------------------------------------------
+	
+	static int[] shiftArrayElementFromRightToLeft(int[] array) {
+		int lastIndex = array.length - 1; 
+	    int oldFirst = array[0]; 
+
+	    for (int i = 0; i < lastIndex; i++) 
+	        array[i] = array[i + 1];
+
+	    array[lastIndex] = oldFirst;
+		return array;
 	}
 }
