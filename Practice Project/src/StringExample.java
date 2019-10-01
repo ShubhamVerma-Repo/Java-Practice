@@ -23,6 +23,29 @@ public class StringExample {
 		
 		System.out.println("String after removing all whitespaces : "+removeWhiteSpace(str1));
 		
+		
+		//----------------------------------------------------------------------------------------------------------
+		
+		String one=new String("Shubham");
+		String two=new String("Shubham");
+		String three=new String(one);
+		String four=two;
+		String five="Shubham";
+		
+		System.out.println("-------------------------------------------------------------");
+		System.out.println("one == two : " + (one == two));
+		System.out.println("one.equals(two) : " + one.equals(two));
+		System.out.println("one == three : " + (one == three));
+		System.out.println("one.equals(three) : " + one.equals(three));
+		System.out.println("one == five : " + (one == five));
+		System.out.println("one.equals(five) : " + one.equals(five));
+		System.out.println("two == three : " + (two == three));
+		System.out.println("two.equals(three) : " + two.equals(three));
+		System.out.println("two == four : " + (two == four));
+		System.out.println("two.equals(four) : " + two.equals(four));
+		System.out.println("two == five : " + (two == five));
+		System.out.println("two.equals(five) : " + two.equals(five));
+		
 	}
 	
 	static boolean findPallindromeAfterReversing(String str1) {

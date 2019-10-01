@@ -3,7 +3,7 @@ public class Overload_Testing {
 
 	public static void main(String[] args) {
 
-		call(null);
+		call("dsa");
 		
 		
 		Overload_Testing obj=new Overload_Testing();
@@ -12,7 +12,7 @@ public class Overload_Testing {
 	
 	//--------------------------------------------------
 	static void call(Object o) {
-		System.out.println("Integer");
+		System.out.println("Object");
 	}
 	
 	/*static void call(String x) {
@@ -25,7 +25,7 @@ public class Overload_Testing {
 	//--------------------------------------------------
 	
 	String test(String name, int i) {
-		return "shubham";
+		return "parent";
 	}
 	
 	//--------------------------------------------------
@@ -39,4 +39,25 @@ public class Overload_Testing {
 		return null;
 	}
 	//--------------------------------------------------
+}
+
+class Child extends Overload_Testing{
+	
+	String test() {
+		return "shubham";
+	}
+	
+	String test(String name, int i) {
+		return "child";
+	}
+}
+
+class TestIt{
+	
+	public static void main(String[] args) {
+		Child child = new Child();
+		System.out.println(child.test("da",23));
+		Overload_Testing obj = new Overload_Testing();
+		System.out.println(obj.test("da",23));
+	}
 }

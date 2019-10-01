@@ -1,10 +1,21 @@
-abstract class AbstactA {
-
-	public void display() {
-		System.out.println("AbstactA...............");
+abstract class AbstractA {
+	
+	int val1;
+	String val2;
+	public AbstractA(int val1,String val2) {
+		this.val1=val1;
+		this.val2=val2;
 	}
+	
+	abstract void display() ;
 }
-abstract class AbstractAA extends AbstactA {
+
+class AbstractAA extends AbstractA {
+
+	////here if there is no same constructor in parent then you can call another constructor just to avoid error.
+	public AbstractAA(int tempVal) {
+		super(tempVal, null);
+	}
 
 	@Override
 	public void display() {
@@ -13,10 +24,14 @@ abstract class AbstractAA extends AbstactA {
 
 }
 
-public class AA extends AbstractAA {
+
+
+public class AA {
 
 	public static void main(String[] args) {
-		AA a = new AA();
-		a.display();
+		int tempVal=1;
+		
+		AbstractA AA=new AbstractAA(tempVal);
+		AA.display();
 	}
 }
