@@ -29,20 +29,8 @@ public class SpiralMatrix {
 		 * printing the required pattern : clockwise-spiral
 		 * */
 		System.out.println("printing the required pattern : clockwise-spiral");
-		boolean flag=true;
-		for(int i=0;i<size;i++) {
-			if(flag) {
-				for(int j=0;j<size;j++) {
-					System.out.print(matrix[j][i]+" ");
-				}
-				flag=false;
-			}else {
-				for(int j=0;j<size;j++) {
-					System.out.print(matrix[j][i]+" ");
-				}
-				flag=true;
-			}
-		}
+		
+		
 		
 		
 		scan.close();

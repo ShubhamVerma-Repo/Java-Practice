@@ -1,6 +1,4 @@
 import java.util.*;
-import java.util.Map.Entry;
-import java.util.stream.Collectors;
 
 public class SetClass {
 
@@ -22,7 +20,7 @@ public class SetClass {
 		set2.forEach(item -> System.out.print(item.toString() +" "));
 		System.out.println();
 		
-		System.out.println("Set 2 after removing : ");
+		System.out.print("Set 2 after removing : ");
 		getResult(set1,set2).forEach(item ->{
 			System.out.print(item.toString() +" ");
 		});
@@ -30,29 +28,26 @@ public class SetClass {
 	}
 	
 	public static Set<Employee> getResult(Set<Employee> set1,Set<Employee> set2) {
-		Map<String,Set<Employee>> map1=new HashMap<>();
+		Map<String,Integer> map1=new HashMap<>();
 		set1.forEach(item -> {
-			map1.put(item.name, set1);
+			map1.put(item.name, item.age);
 		});
 		
-		Map<String,Set<Employee>> map2=new HashMap<>();
+		Map<String,Integer> map2=new HashMap<>();
 		set2.forEach(item -> {
-			map2.put(item.name, set2);
+			map2.put(item.name, item.age);
 		});
 		
 		map1.forEach((key,value) -> {
 			if(map2.containsKey(key)) {
 				map2.remove(key);
-				System.out.println("---------------"+key);
 			}
 		});
 		
 		Set<Employee> resultSet=new HashSet<>();
-//		resultSet.addAll(map2.entrySet().stream().map(e -> e.getValue()).collect(Collectors.toSet()));
-		
-		map2.values().forEach(item -> {
+		map2.forEach((key, value) -> {
+			resultSet.add(new Employee(key, value));
 		});
-		
 		
 		return resultSet;
 }
