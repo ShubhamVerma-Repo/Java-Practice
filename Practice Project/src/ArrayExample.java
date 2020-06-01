@@ -30,6 +30,7 @@ public class ArrayExample {
 		
 		int[] temp= {1,2,4,1,5,2};
 		int[] arrWithoutDuplicate=removeDuplicate(temp);
+		System.out.println("Array after removing duplicate elements :");
 		for(int i=0;i<arrWithoutDuplicate.length;i++){
 			if(arrWithoutDuplicate[i]!=0)
 				System.out.print(" "+arrWithoutDuplicate[i]);
@@ -72,6 +73,11 @@ public class ArrayExample {
 		System.out.println("-----------------------------------------------------------------------");
 		
 		//-----------------------------------------------------------------------
+		
+		String originalString="abdul KaLam aAJaD";
+		String stringAfterOperation=filterOutString(originalString);
+		System.out.println(stringAfterOperation);
+		System.out.println("\n-----------------------------------------------------------------------");
 	}
 	
 	static int maxElement(int[] arr) {
@@ -167,10 +173,10 @@ public class ArrayExample {
 		int lastElementOfArray=Arrays.stream(array).reduce((first, second) -> second).getAsInt()+1;
 		
 		int[] missingNumArray = new int[lastElementOfArray];
-		for(int counter=1;counter<lastElementOfArray;counter++) {
-			boolean flag=binarySearch(array, counter);
+		for(int item=1;item<lastElementOfArray;item++) {
+			boolean flag=binarySearch(array, item);
 			if(!flag) 
-				missingNumArray[counter-1]=counter;
+				missingNumArray[item-1]=item;
 		}
 		return missingNumArray;
 	}
@@ -211,5 +217,24 @@ public class ArrayExample {
 
 	    array[lastIndex] = oldFirst;
 		return array;
+	}
+	
+	//-----------------------------------------------------------------------
+	
+	static String filterOutString(String inputString) {
+		String[] tempString=inputString.split("\\s");
+		int i=0;
+		String originalString="";
+		while(i<tempString.length) {
+			if(i!=tempString.length-1) {
+				originalString+=tempString[i].toUpperCase().charAt(0);
+				originalString+=".";
+			}else {
+				char tempChar=tempString[i].toUpperCase().charAt(0);
+				originalString+=tempChar+(tempString[i].toLowerCase().substring(1));
+			}
+			i++;
+		}
+		return originalString;
 	}
 }
