@@ -1,4 +1,4 @@
-package com.iris.javaReflection;
+package com.demo.javaReflection;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

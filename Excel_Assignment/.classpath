@@ -33,5 +33,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="D:/setups/java/Ojdbc/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="D:/setups/java/Servlet/servlet-api.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

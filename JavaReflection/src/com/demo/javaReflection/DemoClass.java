@@ -1,4 +1,4 @@
-package com.iris.javaReflection;
+package com.demo.javaReflection;
 
 public class DemoClass {
 
